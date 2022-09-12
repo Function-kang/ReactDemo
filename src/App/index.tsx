@@ -5,7 +5,7 @@ import { Router } from "../router";
 import { menuItems } from "./columns";
 import './index.scss';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 const App: React.FC = () => {
   const navigate = useNavigate()
@@ -14,7 +14,7 @@ const App: React.FC = () => {
   }
   return (
     <div className="app">
-      <Layout style={{height: "100%"}}>
+      <Layout className='app_layout' style={{height: "100%", display: "flex"}}>
         <Sider>
           <Menu
             defaultSelectedKeys={['1']}
@@ -25,12 +25,11 @@ const App: React.FC = () => {
             onClick={menuClick}
           />
         </Sider>
-        <Layout>
-          <Header>Header</Header>
+        <Layout className="section">
+          <Header></Header>
           <Content>
             <Router />
           </Content>
-          <Footer>Footer</Footer>
         </Layout>
       </Layout>
     </div>
